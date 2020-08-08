@@ -2,6 +2,9 @@ package Models;
 
 import lombok.Data;
 
+/**
+ * Users pojo class
+ */
 @Data
 public class Users {
     private Integer id;

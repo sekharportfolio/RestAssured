@@ -1,6 +1,5 @@
 package Utilities;
 
-
 import com.aventstack.extentreports.Status;
 import org.testng.ITestContext;
 import org.testng.ITestListener;

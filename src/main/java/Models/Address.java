@@ -2,6 +2,9 @@ package Models;
 
 import lombok.Data;
 
+/**
+ * Address pojo class
+ */
 @Data
 public class Address {
     private String street;

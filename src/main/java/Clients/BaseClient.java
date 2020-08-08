@@ -20,6 +20,10 @@ public class BaseClient {
 
     }
 
+    /**
+     * this method helps to set the base url
+     * @return RequestSpecification
+     */
     public  RequestSpecification SetBaseUri()
     {
         RequestSpecification requestSpec = new RequestSpecBuilder().build();

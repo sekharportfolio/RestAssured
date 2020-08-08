@@ -21,7 +21,11 @@ public class CommentClient {
         this.client=client;
     }
 
-
+    /**
+     * this method will help to call the comments service
+     * @param postId
+     * @return response
+     */
     public Response getCommentsClientResponse(int postId){
         return  given()
                 .spec(client.getUri())
@@ -29,13 +33,22 @@ public class CommentClient {
                 .get("/comments");
     }
 
-
+    /**
+     * this method helps you to get invalid emails count
+     * @param postId
+     * @return count
+     */
     public int getInvalidEmailCount(int postId) {
         comments=  Arrays.asList(getCommentsClientResponse(postId).getBody().as(Comments[].class));
         return comments.stream().map(Comments::getEmail).filter(email -> !EmailValidator.checkEmailFormat(email)).
                 collect(Collectors.toList()).size();
     }
 
+    /**
+     * this method helps you to get valid emails count
+     * @param postId
+     * @return count
+     */
     public int getValidEmailCount(int postId) {
         comments=  Arrays.asList(getCommentsClientResponse(postId).getBody().as(Comments[].class));
         return comments.stream().map(Comments::getEmail).filter(email -> EmailValidator.checkEmailFormat(email)).

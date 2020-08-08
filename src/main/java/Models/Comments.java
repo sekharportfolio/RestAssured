@@ -1,7 +1,9 @@
 package Models;
 
 import lombok.Data;
-
+/**
+ * Comments pojo class
+ */
 @Data
 public class Comments {
     private int postId;
