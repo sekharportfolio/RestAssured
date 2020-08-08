@@ -9,7 +9,7 @@ workflows:
       - maven/test # checkout, build, test, and upload test results
 
       - store_test_results:
-      path: reports
+          path: reports
 
       - store_artifacts:
           path: reports
