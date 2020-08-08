@@ -21,4 +21,5 @@ mvn clean test
 ##Important points to remember:
 
 Test Report: Test Report is saved in location - TestReport
+
 .gitignore: reports/, .idea/, log/, target/ are covered in .gitignore file
