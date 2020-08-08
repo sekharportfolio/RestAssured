@@ -7,14 +7,14 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 
-public class UserClient {
+public class BaseClient {
 
     private RequestSpecification requestSpecification;
     private ResponseBody responseBody;
     private Integer statusCode;
     private Response response;
 
-    public UserClient() {
+    public BaseClient() {
         RestAssured.baseURI = TestData.BASEURL;
     }
 
