@@ -2,6 +2,7 @@ package Clients;
 
 import Utilities.TestData;
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -9,18 +10,29 @@ import io.restassured.specification.RequestSpecification;
 
 public class BaseClient {
 
-    private RequestSpecification requestSpecification;
+    public RequestSpecification requestSpecification;
     private ResponseBody responseBody;
     private Integer statusCode;
     private Response response;
 
     public BaseClient() {
-        RestAssured.baseURI = TestData.BASEURL;
+        SetBaseUri();
+
     }
 
-    public void initRestAPI() {
-        requestSpecification = RestAssured.given();
+    public  RequestSpecification SetBaseUri()
+    {
+        RequestSpecification requestSpec = new RequestSpecBuilder().build();
+        requestSpec.baseUri(TestData.BASEURL);
+
+        return requestSpec;
     }
+
+    public  RequestSpecification getUri()
+    {
+        return SetBaseUri();
+    }
+
 
     /**
      * This method calls the Rest API
